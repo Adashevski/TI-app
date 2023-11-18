@@ -1,38 +1,68 @@
+/* Istniejące style */
+body {
+  background-color: #1e272e;
+  color: silver;
+  font-size: 16px;
+}
+
 .App {
   text-align: center;
+  padding: 5% 10%;
+  max-width: 100%;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.results {
+  font-size: 1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  font-size: 1.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.select {
+  padding: 6px 12px;
+  font-size: 10px;
+  width: 100px;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.startBtn {
+  padding: 6px 12px;
+  font-size: 10px;
+  width: 100px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 1em 0;
+}
+.cheatCheck {
+  font-size: 1em;
+  margin-top: 30px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 1200px) {
+  .results {
+    font-size: 2em;
   }
-  to {
-    transform: rotate(360deg);
+  .header {
+    font-size: 3em;
+  }
+  .select {
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+  }
+  .startBtn {
+    font-size: 20px;
+    width: 200px;
   }
 }
