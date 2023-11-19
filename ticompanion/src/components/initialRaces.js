@@ -1,4 +1,4 @@
-export const initialAvailableRaces = [
+export const initialRaces = [
   { id: 1, name: "Arborec" },
   { id: 2, name: "Barony" },
   { id: 3, name: "Saar" },

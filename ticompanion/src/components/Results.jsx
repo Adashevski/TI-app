@@ -1,31 +1,37 @@
-import React from "react";
+import { useContext } from "react";
+import { PlayersContext } from "../Context/PlayersContext.jsx";
 
-export const Results = ({
-  selectedSpeaker,
-  runCount,
-  lastGameResult,
-  players,
-}) => (
-  <div className="results">
-    <ul>
-      {players.map((player, index) => (
-        <li key={index}>{player}</li>
-      ))}
-    </ul>
-    <p>{selectedSpeaker && `Mówcą zostaje ${selectedSpeaker}`}</p>
-    {runCount === 0 && <p>To jest pierwsze losowanie</p>}
-    {runCount !== 0 && (
-      <div>
-        <h4 className="cheatCheck">
-          Skrypt został uruchomiony {runCount} razy w ciągu ostatnich 5 minut.
-        </h4>
-        <p>Ostatnie losowanie:</p>
-        <ul>
-          {lastGameResult.map((result, index) => (
-            <li key={index}>{result}</li>
-          ))}
-        </ul>
-      </div>
-    )}
-  </div>
-);
+export function Results() {
+  const { result, playersCount, runCount, isGameTrue } =
+    useContext(PlayersContext);
+
+  const randomIndex = Math.floor(Math.random() * playersCount);
+  const selectedSpeaker =
+    result[randomIndex] && result[randomIndex].split(":")[0];
+
+  return (
+    <div className="results">
+      {!isGameTrue && (
+        <div>
+          {runCount === 0 && <h3>To jest pierwsze losowanie</h3>}
+          {runCount > 0 && <h3>Losowanie niedawno się odbyło</h3>}
+        </div>
+      )}
+
+      {isGameTrue && (
+        <div>
+          {runCount === 1 && <h3>Wyniki Oficjalne</h3>}
+          {runCount > 1 && <h3>Wyniki mniej Oficjalne</h3>}
+        </div>
+      )}
+
+      <ul>
+        {result.map((player, index) => (
+          <li key={index}>{player}</li>
+        ))}
+      </ul>
+
+      <p>{selectedSpeaker && `Mówcą zostaje ${selectedSpeaker}`}</p>
+    </div>
+  );
+}
