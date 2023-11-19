@@ -20,7 +20,7 @@ export function StartGame() {
     availableRacesCopy.splice(randomRaceIndex, 1);
   }
 
-  return result;
+  return <div>{result}</div>;
 }
 
 //const TIME_CHECK = 5 * 60 * 1000;

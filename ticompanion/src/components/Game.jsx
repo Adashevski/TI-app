@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { PlayersContext } from "../Context/PlayersContext.jsx";
 import { handleStartGame } from "./handleStartGame";
+import { StartGame } from "./StartGame.jsx";
 
 export function Game() {
   const { playersCount, setPlayersCount } = useContext(PlayersContext);
@@ -29,6 +30,7 @@ export function Game() {
       <button className="startBtn" onClick={handleStartGame}>
         Rozpocznij losowanie
       </button>
+      <StartGame />
     </div>
   );
 }
