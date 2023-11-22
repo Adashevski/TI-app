@@ -1,17 +1,20 @@
 import React, { useContext } from "react";
 import { PlayersContext } from "../Context/PlayersContext.jsx";
-import { startGame } from "./startGame.jsx";
-import { newDate } from "./newDate.js";
+import { startGame } from "../utils/startGame.js";
+import { newDate } from "../utils/newDate.js";
 
 export function Game() {
   const {
     playersCount,
     setPlayersCount,
+    result,
     setResult,
     runCount,
     setRunCount,
     setIsGameTrue,
     setLastRunTimestamp,
+    lastGameResults,
+    setLastGameResults,
   } = useContext(PlayersContext);
 
   //zmiana stanu
@@ -20,6 +23,8 @@ export function Game() {
     setPlayersCount(newPlayersCount);
   };
   const onClickStartGame = () => {
+    const updatedLastGameResults = result ? result : lastGameResults;
+    setLastGameResults(updatedLastGameResults);
     const newResult = startGame(playersCount);
     setResult(newResult);
     const updatedRunCount = runCount + 1;

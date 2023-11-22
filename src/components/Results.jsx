@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { PlayersContext } from "../Context/PlayersContext.jsx";
 
 export function Results() {
-  const { result, playersCount, runCount, isGameTrue } =
+  const { result, playersCount, runCount, isGameTrue, lastGameResults } =
     useContext(PlayersContext);
 
   const randomIndex = Math.floor(Math.random() * playersCount);
@@ -32,6 +32,22 @@ export function Results() {
       </ul>
 
       <p>{selectedSpeaker && `Mówcą zostaje ${selectedSpeaker}`}</p>
+      <div>
+        {runCount === 1 && (
+          <h4>Skrypt został uruchomiony raz w ciągu ostatnich 5 minut.</h4>
+        )}
+        {runCount > 1 && (
+          <h4>
+            Skrypt został uruchomiony {runCount} razy w ciągu ostatnich 5 minut.
+          </h4>
+        )}
+        {lastGameResults.length !== 0 && <p>Poprzednie losowanie:</p>}
+        <ul>
+          {lastGameResults.map((result, index) => (
+            <li key={index}>{result}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

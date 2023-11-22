@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PlayersProvider } from "./Context/PlayersContext.jsx";
 import { Game } from "./components/Game.jsx";
 import { Results } from "./components/Results.jsx";
-import { clearLocalStorage } from "./components/clearLocalStorage.js";
+import { clearLocalStorage } from "./utils/clearLocalStorage.js";
 import "./App.css";
 
 export function App() {

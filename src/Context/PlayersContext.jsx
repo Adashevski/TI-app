@@ -40,7 +40,15 @@ export function PlayersProvider({ children }) {
       localStorage.setItem("lastRunTimestamp", lastRunTimestamp.toString());
     }
   }, [lastRunTimestamp]);
-
+  //poprzedni rezultat
+  const [lastGameResults, setLastGameResults] = useState(() => {
+    const storedData = localStorage.getItem("lastGameResults");
+    const parsedData = storedData && JSON.parse(storedData);
+    return Array.isArray(parsedData) ? parsedData : [];
+  });
+  useEffect(() => {
+    localStorage.setItem("lastGameResults", JSON.stringify(lastGameResults));
+  }, [lastGameResults]);
   return (
     <PlayersContext.Provider
       value={{
@@ -54,6 +62,8 @@ export function PlayersProvider({ children }) {
         setIsGameTrue,
         lastRunTimestamp,
         setLastRunTimestamp,
+        lastGameResults,
+        setLastGameResults,
       }}
     >
       {children}
@@ -61,10 +71,6 @@ export function PlayersProvider({ children }) {
   );
 }
 
-//useEffect(() => {
+// useEffect(() => {
 //  localStorage.setItem("lastGameResult", JSON.stringify(lastGameResult));
 // }, [lastGameResult]);
-// useEffect(() => {
-//   localStorage.setItem("lastRunTimestamp", JSON.stringify(lastRunTimestamp));
-// }, [lastRunTimestamp]);
-//
