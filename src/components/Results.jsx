@@ -1,8 +1,9 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { PlayersContext } from "../Context/PlayersContext.jsx";
 
 export function Results() {
-  const { result, playersCount, runCount, isGameTrue, lastGameResults } =
+  const { result, playersCount, runCount, isGameTrue } =
     useContext(PlayersContext);
 
   const randomIndex = Math.floor(Math.random() * playersCount);
@@ -11,13 +12,9 @@ export function Results() {
 
   return (
     <div className="results">
-      {!isGameTrue && (
-        <div>
-          {runCount === 0 && <h3>To jest pierwsze losowanie</h3>}
-          {runCount > 0 && <h3>Losowanie niedawno się odbyło</h3>}
-        </div>
-      )}
-
+      <Link to="/TI-app">
+        <button>powrót</button>
+      </Link>
       {isGameTrue && (
         <div>
           {runCount === 1 && <h3>Wyniki Oficjalne</h3>}
@@ -32,7 +29,7 @@ export function Results() {
       </ul>
 
       <p>{selectedSpeaker && `Mówcą zostaje ${selectedSpeaker}`}</p>
-      <div>
+      {/* <div>
         {runCount === 1 && (
           <h4>Skrypt został uruchomiony raz w ciągu ostatnich 5 minut.</h4>
         )}
@@ -41,13 +38,7 @@ export function Results() {
             Skrypt został uruchomiony {runCount} razy w ciągu ostatnich 5 minut.
           </h4>
         )}
-        {lastGameResults.length !== 0 && <p>Poprzednie losowanie:</p>}
-        <ul>
-          {lastGameResults.map((result, index) => (
-            <li key={index}>{result}</li>
-          ))}
-        </ul>
-      </div>
+      </div> */}
     </div>
   );
 }
