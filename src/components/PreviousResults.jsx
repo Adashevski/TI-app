@@ -7,7 +7,7 @@ export function PreviousResults() {
   return (
     <div>
       <Link to="/TI-app">
-        <button className="startBtn">Powrót</button>
+        <button className="backBtn">Powrót</button>
       </Link>
       <p>Poprzednie losowanie:</p>
       <ul>

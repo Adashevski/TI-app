@@ -25,6 +25,9 @@ body {
   padding-bottom: 10px;
   margin-bottom: 50px;
 }
+.gameText {
+  margin-bottom: 40px;
+}
 .selectContainer {
   height: 60px;
   display: flex;

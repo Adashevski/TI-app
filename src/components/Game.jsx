@@ -39,7 +39,7 @@ export function Game() {
   return (
     <div className="gameHeader">
       <h1 className="gameTitle">Wybór Nacji</h1>
-      <p>Wybierz ilość graczy:</p>
+      <p className="gameText">Wybierz ilość graczy:</p>
       <div className="selectContainer">
         <select
           className="select"

@@ -16,4 +16,5 @@ export const initialRaces = [
   { id: 15, name: "Xxcha" },
   { id: 16, name: "Yin" },
   { id: 17, name: "Yssaril" },
+  { id: 18, name: "Stawia piwo" },
 ];
