@@ -54,7 +54,8 @@ li {
   margin-top: 50px;
 }
 .resultsTitle {
-  border-bottom: 2px inset silver;
+  border-bottom: 4px groove silver;
+  border-radius: 15px;
   margin-top: 50px;
 }
 .resultsList {
@@ -66,12 +67,13 @@ li {
 }
 .resultsItem {
   padding: 10px;
-  border: 2px outset;
+  border-bottom: 2px outset;
   border-radius: 15px;
 }
 .speaker {
-  border-top: 2px inset silver;
-  padding-top: 10px;
+  border-top: 4px groove silver;
+  border-radius: 15px;
+  padding-top: 20px;
 }
 
 @media (min-width: 1200px) {
