@@ -26,6 +26,7 @@ body {
   width: 100px;
   margin-right: 20px;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
 }
 
 .startBtn {
@@ -33,6 +34,7 @@ body {
   font-size: 10px;
   width: 100px;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
 }
 
 ul {
@@ -47,6 +49,29 @@ li {
   font-size: 1em;
   margin-top: 30px;
   color: white;
+}
+.prevResultsTitle {
+  margin-top: 50px;
+}
+.resultsTitle {
+  border-bottom: 2px inset silver;
+  margin-top: 50px;
+}
+.resultsList {
+  margin: auto;
+  max-width: max-content;
+  text-align: left;
+  padding: 1px 8px;
+  margin-top: 10px;
+}
+.resultsItem {
+  padding: 10px;
+  border: 2px outset;
+  border-radius: 15px;
+}
+.speaker {
+  border-top: 2px inset silver;
+  padding-top: 10px;
 }
 
 @media (min-width: 1200px) {

@@ -57,15 +57,15 @@ export function Game() {
 
       {runCount === 0 && (
         <div>
-          <h3>To jest pierwsze losowanie</h3>
+          <h6>To jest pierwsze losowanie</h6>
         </div>
       )}
       {runCount > 0 && (
         <div>
           {" "}
-          <h3>Losowanie niedawno się odbyło</h3>
+          <h6 className="prevResultsTitle">Losowanie niedawno się odbyło</h6>
           <Link to="/prevResults">
-            <button>Sprawdź wyniki</button>
+            <button className="startBtn">Sprawdź wyniki</button>
           </Link>
         </div>
       )}

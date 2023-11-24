@@ -13,22 +13,26 @@ export function Results() {
   return (
     <div className="results">
       <Link to="/TI-app">
-        <button>powrót</button>
+        <button className="startBtn">Powrót</button>
       </Link>
       {isGameTrue && (
-        <div>
+        <div className="resultsTitle">
           {runCount === 1 && <h3>Wyniki Oficjalne</h3>}
           {runCount > 1 && <h3>Wyniki mniej Oficjalne</h3>}
         </div>
       )}
 
-      <ul>
+      <ul className="resultsList">
         {result.map((player, index) => (
-          <li key={index}>{player}</li>
+          <li className="resultsItem" key={index}>
+            {player}
+          </li>
         ))}
       </ul>
 
-      <p>{selectedSpeaker && `Mówcą zostaje ${selectedSpeaker}`}</p>
+      <p className="speaker">
+        {selectedSpeaker && `Mówcą zostaje ${selectedSpeaker}`}
+      </p>
       {/* <div>
         {runCount === 1 && (
           <h4>Skrypt został uruchomiony raz w ciągu ostatnich 5 minut.</h4>
