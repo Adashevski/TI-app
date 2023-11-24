@@ -59,7 +59,7 @@ export function Game() {
 
       {runCount === 0 && (
         <div>
-          <h6>To jest pierwsze losowanie</h6>
+          <h6 className="firstGame">To jest pierwsze losowanie</h6>
         </div>
       )}
       {runCount > 0 && (

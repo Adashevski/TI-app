@@ -26,15 +26,15 @@ body {
   margin-bottom: 50px;
 }
 .selectContainer {
-  height: 40px;
+  height: 60px;
   display: flex;
   justify-content: center;
 }
 .select {
   padding: 6px 12px;
-  font-size: 10px;
-  width: 100px;
-  height: 40px;
+  font-size: 14px;
+  width: 120px;
+  height: 60px;
   margin-right: 20px;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
   border-radius: 15px;
@@ -42,9 +42,9 @@ body {
 
 .startBtn {
   padding: 6px 12px;
-  font-size: 10px;
-  width: 100px;
-  height: 40px;
+  font-size: 14px;
+  width: 120px;
+  height: 60px;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
   border-radius: 15px;
 }
@@ -64,6 +64,12 @@ body {
 }
 .buttonContainer {
   margin-left: 70%;
+}
+.prevResultsTitle {
+  font-size: 1em;
+}
+.firstGame {
+  font-size: 1em;
 }
 
 ul {
@@ -115,10 +121,12 @@ li {
   .select {
     font-size: 20px;
     width: 200px;
+    height: 80px;
     text-align: center;
   }
   .startBtn {
     font-size: 20px;
     width: 200px;
+    height: 80px;
   }
 }
