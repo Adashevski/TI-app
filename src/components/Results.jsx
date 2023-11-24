@@ -12,9 +12,11 @@ export function Results() {
 
   return (
     <div className="results">
-      <Link to="/TI-app">
-        <button className="startBtn">Powrót</button>
-      </Link>
+      <div className="buttonContainer">
+        <Link to="/TI-app">
+          <button className="backBtn">Powrót</button>
+        </Link>
+      </div>
       {isGameTrue && (
         <div className="resultsTitle">
           {runCount === 1 && <h3>Wyniki Oficjalne</h3>}

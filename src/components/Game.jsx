@@ -37,23 +37,25 @@ export function Game() {
 
   //render
   return (
-    <div className="header">
-      <h1 className="title">Wybór Nacji</h1>
+    <div className="gameHeader">
+      <h1 className="gameTitle">Wybór Nacji</h1>
       <p>Wybierz ilość graczy:</p>
-      <select
-        className="select"
-        id="playersCount"
-        onChange={onPlayersCountChange}
-        value={playersCount}
-      >
-        <option value="3">3 graczy</option>
-        <option value="4">4 graczy</option>
-        <option value="5">5 graczy</option>
-        <option value="6">6 graczy</option>
-      </select>
-      <button className="startBtn" onClick={onClickStartGame}>
-        Rozpocznij losowanie
-      </button>
+      <div className="selectContainer">
+        <select
+          className="select"
+          id="playersCount"
+          onChange={onPlayersCountChange}
+          value={playersCount}
+        >
+          <option value="3">3 graczy</option>
+          <option value="4">4 graczy</option>
+          <option value="5">5 graczy</option>
+          <option value="6">6 graczy</option>
+        </select>
+        <button className="startBtn" onClick={onClickStartGame}>
+          Rozpocznij losowanie
+        </button>
+      </div>
 
       {runCount === 0 && (
         <div>
@@ -65,7 +67,7 @@ export function Game() {
           {" "}
           <h6 className="prevResultsTitle">Losowanie niedawno się odbyło</h6>
           <Link to="/prevResults">
-            <button className="startBtn">Sprawdź wyniki</button>
+            <button className="prevResultsBtn">Sprawdź wyniki</button>
           </Link>
         </div>
       )}
