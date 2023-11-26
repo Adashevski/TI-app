@@ -1,4 +1,30 @@
-/* Istniejące style */
+.testgameHeader {
+  font-size: 1em;
+}
+.testselectContainer {
+  display: flex;
+  justify-content: center;
+}
+.testselect {
+  appearance: none;
+  border: none;
+  background-image: linear-gradient(45deg, rgb(110, 110, 110), white);
+  padding-left: 15vw;
+  font-size: 14px;
+  width: 50vw;
+  height: 50vh;
+  box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.5);
+}
+.teststartBtn {
+  border: none;
+  background-image: linear-gradient(315deg, rgb(110, 110, 110), white);
+  font-size: 14px;
+  width: 50vw;
+  height: 50vh;
+  box-shadow: 1px 5px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* */
 body {
   background-color: #1e272e;
   color: silver;
@@ -7,7 +33,6 @@ body {
 
 .App {
   text-align: center;
-  padding: 5% 10%;
   max-width: 100%;
   margin: auto;
 }
@@ -19,6 +44,7 @@ body {
 .gameHeader {
   font-size: 1em;
 }
+
 .gameTitle {
   border-bottom: 3px groove silver;
   border-radius: 15px;
@@ -33,6 +59,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .select {
   padding: 6px 12px;
   font-size: 14px;
@@ -51,6 +78,7 @@ body {
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
   border-radius: 15px;
 }
+
 .backBtn {
   padding: 6px 12px;
   font-size: 10px;
@@ -73,6 +101,9 @@ body {
 }
 .firstGame {
   font-size: 1em;
+}
+.firstGame__text {
+  font-size: 0.8em;
 }
 
 ul {
