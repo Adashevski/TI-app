@@ -1,30 +1,3 @@
-.testgameHeader {
-  font-size: 1em;
-}
-.testselectContainer {
-  display: flex;
-  justify-content: center;
-}
-.testselect {
-  appearance: none;
-  border: none;
-  background-image: linear-gradient(45deg, rgb(110, 110, 110), white);
-  padding-left: 15vw;
-  font-size: 14px;
-  width: 50vw;
-  height: 50vh;
-  box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.5);
-}
-.teststartBtn {
-  border: none;
-  background-image: linear-gradient(315deg, rgb(110, 110, 110), white);
-  font-size: 14px;
-  width: 50vw;
-  height: 50vh;
-  box-shadow: 1px 5px 10px rgba(255, 255, 255, 0.5);
-}
-
-/* */
 body {
   background-color: #1e272e;
   color: silver;
@@ -37,73 +10,13 @@ body {
   margin: auto;
 }
 
-.results {
-  font-size: 1em;
-}
-
-.gameHeader {
-  font-size: 1em;
-}
-
-.gameTitle {
-  border-bottom: 3px groove silver;
-  border-radius: 15px;
-  padding-bottom: 10px;
-  margin-bottom: 50px;
-}
-.gameText {
-  margin-bottom: 40px;
-}
-.selectContainer {
-  height: 60px;
-  display: flex;
-  justify-content: center;
-}
-
-.select {
-  padding: 6px 12px;
-  font-size: 14px;
-  width: 120px;
-  height: 60px;
-  margin-right: 20px;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
-  border-radius: 15px;
-}
-
-.startBtn {
+.oldstartBtn {
   padding: 6px 12px;
   font-size: 14px;
   width: 120px;
   height: 60px;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
   border-radius: 15px;
-}
-
-.backBtn {
-  padding: 6px 12px;
-  font-size: 10px;
-  width: 100px;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
-  border-radius: 15px;
-}
-.prevResultsBtn {
-  padding: 6px 12px;
-  font-size: 10px;
-  width: 100px;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
-  border-radius: 15px;
-}
-.buttonContainer {
-  margin-left: 70%;
-}
-.prevResultsTitle {
-  font-size: 1em;
-}
-.firstGame {
-  font-size: 1em;
-}
-.firstGame__text {
-  font-size: 0.8em;
 }
 
 ul {
@@ -118,49 +31,4 @@ li {
   font-size: 1em;
   margin-top: 30px;
   color: white;
-}
-.prevResultsTitle {
-  margin-top: 50px;
-}
-.resultsTitle {
-  border-bottom: 4px groove silver;
-  border-radius: 15px;
-  margin-top: 50px;
-}
-.resultsList {
-  margin: auto;
-  max-width: max-content;
-  text-align: left;
-  padding: 1px 8px;
-  margin-top: 10px;
-}
-.resultsItem {
-  padding: 10px;
-  border-bottom: 2px outset;
-  border-radius: 15px;
-}
-.speaker {
-  border-top: 4px groove silver;
-  border-radius: 15px;
-  padding-top: 20px;
-}
-
-@media (min-width: 1200px) {
-  .results {
-    font-size: 2em;
-  }
-  .header {
-    font-size: 3em;
-  }
-  .select {
-    font-size: 20px;
-    width: 200px;
-    height: 80px;
-    text-align: center;
-  }
-  .startBtn {
-    font-size: 20px;
-    width: 200px;
-    height: 80px;
-  }
 }

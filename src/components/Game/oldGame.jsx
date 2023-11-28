@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { PlayersContext } from "../Context/PlayersContext.jsx";
-import { startGame } from "../utils/startGame.js";
-import { newDate } from "../utils/newDate.js";
+import { PlayersContext } from "../../Context/PlayersContext.jsx";
+import { startGame } from "../../utils/startGame.js";
+import { newDate } from "../../utils/newDate.js";
 
-export function TestPage() {
+export function Game() {
   const navigate = useNavigate();
   const {
     playersCount,
@@ -37,30 +37,29 @@ export function TestPage() {
 
   //render
   return (
-    <div className="testgameHeader">
-      <div className="testselectContainer">
+    <div className="gameHeader">
+      <h1 className="gameTitle">Wybór Nacji</h1>
+      <p className="gameText">Wybierz ilość graczy:</p>
+      <div className="selectContainer">
         <select
-          className="testselect"
+          className="select"
           id="playersCount"
           onChange={onPlayersCountChange}
           value={playersCount}
         >
-          <option value="3">3 Graczy</option>
-          <option value="4">4 Graczy</option>
-          <option value="5">5 Graczy</option>
-          <option value="6">6 Graczy</option>
+          <option value="3">3 graczy</option>
+          <option value="4">4 graczy</option>
+          <option value="5">5 graczy</option>
+          <option value="6">6 graczy</option>
         </select>
-        <button className="teststartBtn" onClick={onClickStartGame}>
+        <button className="startBtn" onClick={onClickStartGame}>
           Rozpocznij losowanie
         </button>
       </div>
 
       {runCount === 0 && (
-        <div className="testTitle">
+        <div>
           <h6 className="firstGame">To jest pierwsze losowanie</h6>
-          <p className="firstGame__text">
-            Wybierz ilość graczy i rozpocznij losowanie
-          </p>
         </div>
       )}
       {runCount > 0 && (

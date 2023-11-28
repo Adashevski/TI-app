@@ -1,0 +1,35 @@
+.results {
+  font-size: 1em;
+}
+.results__title {
+  border-bottom: 4px groove silver;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+.results_list {
+  margin: auto;
+  max-width: max-content;
+  text-align: left;
+  padding: 1px 8px;
+  margin-top: 10px;
+}
+.results_list__item {
+  padding: 10px;
+  border-bottom: 2px outset;
+  border-radius: 15px;
+}
+.backBtn {
+  padding: 6px 12px;
+  font-size: 10px;
+  width: 100px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+}
+.buttonContainer {
+  margin-left: 70%;
+}
+.speaker {
+  border-top: 4px groove silver;
+  border-radius: 15px;
+  padding-top: 20px;
+}

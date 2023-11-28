@@ -13,6 +13,15 @@ export function PlayersProvider({ children }) {
   }, [playersCount]);
   // rezultat
   const [result, setResult] = useState([]);
+  //mówca
+  const [speaker, setSpeaker] = useState(() => {
+    const storedData = localStorage.getItem("speaker");
+    return storedData ? JSON.parse(storedData) : "";
+  });
+  useEffect(() => {
+    localStorage.setItem("speaker", JSON.stringify(speaker));
+  }, [speaker]);
+
   //ile losowań się odbyło
   const [runCount, setRunCount] = useState(() => {
     const storedData = localStorage.getItem("runCount");
@@ -56,6 +65,8 @@ export function PlayersProvider({ children }) {
         setPlayersCount,
         result,
         setResult,
+        speaker,
+        setSpeaker,
         runCount,
         setRunCount,
         isGameTrue,
@@ -70,7 +81,3 @@ export function PlayersProvider({ children }) {
     </PlayersContext.Provider>
   );
 }
-
-// useEffect(() => {
-//  localStorage.setItem("lastGameResult", JSON.stringify(lastGameResult));
-// }, [lastGameResult]);

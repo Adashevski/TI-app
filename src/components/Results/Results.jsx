@@ -1,38 +1,43 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { PlayersContext } from "../Context/PlayersContext.jsx";
+import { PlayersContext } from "../../Context/PlayersContext.jsx";
+import styles from "./Results.module.css";
 
 export function Results() {
-  const { result, playersCount, runCount, isGameTrue } =
+  const { result, playersCount, runCount, isGameTrue, speaker, setSpeaker } =
     useContext(PlayersContext);
 
   const randomIndex = Math.floor(Math.random() * playersCount);
   const selectedSpeaker =
     result[randomIndex] && result[randomIndex].split(":")[0];
 
+  useEffect(() => {
+    setSpeaker(selectedSpeaker);
+  }, [speaker]);
+
   return (
-    <div className="results">
-      <div className="buttonContainer">
+    <div className={styles.results}>
+      <div className={styles.buttonContainer}>
         <Link to="/TI-app">
-          <button className="backBtn">Powrót</button>
+          <button className={styles.backBtn}>Powrót</button>
         </Link>
       </div>
       {isGameTrue && (
-        <div className="resultsTitle">
+        <div className={styles.results__title}>
           {runCount === 1 && <h3>Wyniki Oficjalne</h3>}
           {runCount > 1 && <h3>Wyniki mniej Oficjalne</h3>}
         </div>
       )}
 
-      <ul className="resultsList">
+      <ul className={styles.results_list}>
         {result.map((player, index) => (
-          <li className="resultsItem" key={index}>
+          <li className={styles.results_list__item} key={index}>
             {player}
           </li>
         ))}
       </ul>
 
-      <p className="speaker">
+      <p className={styles.speaker}>
         {selectedSpeaker && `Mówcą zostaje ${selectedSpeaker}`}
       </p>
       {/* <div>

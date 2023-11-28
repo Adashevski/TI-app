@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import { PlayersProvider } from "./Context/PlayersContext.jsx";
-import { Game } from "./components/Game.jsx";
-import { Results } from "./components/Results.jsx";
+import { Game } from "./components/Game/Game.jsx";
+import { Results } from "./components/Results/Results.jsx";
 import { clearLocalStorage } from "./utils/clearLocalStorage.js";
 import "./App.css";
 import { PreviousResults } from "./components/PreviousResults.jsx";
-import { TestPage } from "./components/TestPage.jsx";
 export function App() {
   // Ustawienie isGameTrue na false przy odświeżeniu strony
   const [isGameTrue, setIsGameTrue] = useState(() => {
@@ -47,7 +46,6 @@ export function App() {
         <div className="App">
           <Routes>
             <Route path="/TI-app" element={<Game />} />
-            <Route path="/test" element={<TestPage />} />
             <Route path="/results" element={<Results />} />
             <Route path="/prevResults" element={<PreviousResults />} />
           </Routes>
