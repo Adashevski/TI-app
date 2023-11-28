@@ -32,7 +32,7 @@ export function Game() {
     setIsGameTrue(updatedIsGameTrue);
     const updatedLastRunTimestamp = newDate();
     setLastRunTimestamp(updatedLastRunTimestamp);
-    navigate("/results");
+    navigate("/test");
   };
 
   //render
