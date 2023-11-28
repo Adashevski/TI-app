@@ -47,7 +47,7 @@ export function App() {
         <div className="App">
           <Routes>
             <Route path="/TI-app" element={<Game />} />
-            <Route path="/TI-app/test" element={<TestPage />} />
+            <Route path="/test" element={<TestPage />} />
             <Route path="/results" element={<Results />} />
             <Route path="/prevResults" element={<PreviousResults />} />
           </Routes>
