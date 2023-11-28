@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/TI-app/static/css/main.17754a1f.css",
-    "main.js": "/TI-app/static/js/main.69fa95d1.js",
+    "main.js": "/TI-app/static/js/main.7108d50e.js",
     "static/js/787.f7390bca.chunk.js": "/TI-app/static/js/787.f7390bca.chunk.js",
     "index.html": "/TI-app/index.html",
     "main.17754a1f.css.map": "/TI-app/static/css/main.17754a1f.css.map",
-    "main.69fa95d1.js.map": "/TI-app/static/js/main.69fa95d1.js.map",
+    "main.7108d50e.js.map": "/TI-app/static/js/main.7108d50e.js.map",
     "787.f7390bca.chunk.js.map": "/TI-app/static/js/787.f7390bca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17754a1f.css",
-    "static/js/main.69fa95d1.js"
+    "static/js/main.7108d50e.js"
   ]
 }
