@@ -84,16 +84,18 @@ export function Game() {
           </button>
         </div>
       )}
-      <div>
-        <ul className={styles.results_list}>
-          {lastGameResults.map((result, index) => (
-            <li className={styles.results_list__item} key={index}>
-              {result}
-            </li>
-          ))}
-        </ul>
-        <p className={styles.speaker}>Mówcą zostaje {speaker}</p>
-      </div>
+      {isResultsVisible && (
+        <div>
+          <ul className={styles.results_list}>
+            {lastGameResults.map((result, index) => (
+              <li className={styles.results_list__item} key={index}>
+                {result}
+              </li>
+            ))}
+          </ul>
+          <p className={styles.speaker}>Mówcą zostaje {speaker}</p>
+        </div>
+      )}
     </div>
   );
 }
