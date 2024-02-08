@@ -1,8 +1,10 @@
 import { initialRaces } from "./initialRaces";
+import { modifiedRaces } from "./initialRaces";
 
 export function startGame(value) {
   const playersCount = value;
-  const availableRaces = [...initialRaces];
+  const availableRaces =
+    playersCount === 6 ? [...modifiedRaces] : [...initialRaces];
   const result = [];
 
   for (let i = 1; i <= playersCount; i++) {

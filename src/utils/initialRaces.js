@@ -1,4 +1,4 @@
-export const initialRaces = [
+export const modifiedRaces = [
   { id: 1, name: "Arborec" },
   { id: 2, name: "Barony" },
   { id: 3, name: "Saar" },
@@ -17,4 +17,23 @@ export const initialRaces = [
   { id: 16, name: "Yin" },
   { id: 17, name: "Yssaril" },
   { id: 18, name: "Stawia piwo" },
+];
+export const initialRaces = [
+  { id: 1, name: "Arborec" },
+  { id: 2, name: "Barony" },
+  { id: 3, name: "Saar" },
+  { id: 4, name: "Muaat" },
+  { id: 5, name: "Hacan" },
+  { id: 6, name: "Sol" },
+  { id: 7, name: "Ghosts" },
+  { id: 8, name: "L1Z1X" },
+  { id: 9, name: "Mentak" },
+  { id: 10, name: "Naalu" },
+  { id: 11, name: "Nekro" },
+  { id: 12, name: "Sardakk" },
+  { id: 13, name: "Jol-Nar" },
+  { id: 14, name: "Winnu" },
+  { id: 15, name: "Xxcha" },
+  { id: 16, name: "Yin" },
+  { id: 17, name: "Yssaril" },
 ];
