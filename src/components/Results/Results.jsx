@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { playersCount, result } from "../../redux/game/gameSelectors";
 import styles from "./Results.module.css";
-import { Hexgrid } from "./Map/Hexgrid";
 
 export function Results() {
 

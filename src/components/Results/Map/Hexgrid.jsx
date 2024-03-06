@@ -40,8 +40,6 @@ const images = [
     '/tiles/blank-homeSystem4.png',
     '/tiles/37.png',
     '/tiles/25.png',    
-    
-    
 ];
 const rows = [4, 5, 6, 7, 6, 5, 4];
 
