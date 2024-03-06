@@ -1,56 +1,45 @@
-import React, { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { PlayersContext } from "../../Context/PlayersContext.jsx";
-import { startGame } from "../../utils/startGame.js";
-import { newDate } from "../../utils/newDate.js";
-import styles from "../Game/Game.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addPlayerNames, setPlayersCount, startGame } from '../../redux/game/gameSlice';
+import { playersCount } from "../../redux/game/gameSelectors";
+import { Link } from "react-router-dom";
+import styles from "./Game.module.css";
 
 export function Game() {
   const navigate = useNavigate();
-  const {
-    playersCount,
-    setPlayersCount,
-    setResult,
-    runCount,
-    setRunCount,
-    setIsGameTrue,
-    setLastRunTimestamp,
-    lastGameResults,
-    setLastGameResults,
-    speaker,
-  } = useContext(PlayersContext);
+  const dispatch = useDispatch();
+  const statePlayersCount = useSelector(playersCount);
 
-  //zmiana stanu
+  const [playerName, setPlayerName] = useState('');
+  const [playersArray, setPlayersArray] = useState([]);
+
   const onPlayersCountChange = (e) => {
-    const newPlayersCount = e.target.value;
-    setPlayersCount(newPlayersCount);
+    dispatch(setPlayersCount(e.target.value));
   };
+
+  const onPlayerNameChange = (e) => {
+    setPlayerName(e.target.value);
+  };
+
+  const onAddPlayer = () => { 
+    setPlayersArray(prevPlayers => [...prevPlayers, playerName]);
+    setPlayerName('');
+  };
+
   const onClickStartGame = () => {
-    const newResult = startGame(playersCount);
-    setResult(newResult);
-    setLastGameResults(newResult);
-    const updatedRunCount = runCount + 1;
-    setRunCount(updatedRunCount);
-    const updatedIsGameTrue = true;
-    setIsGameTrue(updatedIsGameTrue);
-    const updatedLastRunTimestamp = newDate();
-    setLastRunTimestamp(updatedLastRunTimestamp);
-    navigate("/results");
+    dispatch(addPlayerNames(playersArray));
+    dispatch(startGame());
+    navigate("/TI-app/results");
   };
-  //poprzednie wyniki
-  const [isResultsVisible, setIsResultsVisible] = useState(false);
-  const toggleResultsVisibility = () => {
-    setIsResultsVisible(!isResultsVisible);
-  };
-  //render
+
   return (
     <div className={styles.game}>
       <div className={styles.select}>
-        <select
-          className={styles.select__button}
+        <select className={styles.select__button}
           id="playersCount"
           onChange={onPlayersCountChange}
-          value={playersCount}
+          value={statePlayersCount}
         >
           <option value="3">3 Graczy</option>
           <option value="4">4 Graczy</option>
@@ -58,44 +47,43 @@ export function Game() {
           <option value="6">6 Graczy</option>
         </select>
         <button
-          className={styles.select__buttonStart}
+        className={styles.select__buttonStart}
           onClick={onClickStartGame}
         >
           Rozpocznij losowanie
         </button>
       </div>
-      {runCount === 0 && (
-        <div className={styles.info}>
-          <h6 className={styles.info__header}>To jest pierwsze losowanie</h6>
-          <p className={styles.info__text}>
-            Wybierz ilość graczy i rozpocznij losowanie
-          </p>
-        </div>
-      )}
-      {runCount > 0 && (
-        <div className={styles.info}>
-          {" "}
-          <h6 className={styles.info__header}>Losowanie niedawno się odbyło</h6>
-          <button
-            onClick={toggleResultsVisibility}
-            className={styles.info__button}
-          >
-            Sprawdź wyniki
-          </button>
-        </div>
-      )}
-      {isResultsVisible && (
-        <div>
-          <ul className={styles.results_list}>
-            {lastGameResults.map((result, index) => (
-              <li className={styles.results_list__item} key={index}>
-                {result}
-              </li>
-            ))}
-          </ul>
-          <p className={styles.speaker}>Mówcą zostaje {speaker}</p>
-        </div>
-      )}
+      <div className={styles.info}>
+        <p className={styles.info__header}>
+          Wybierz ilość graczy, dodaj imiona i rozpocznij losowanie!
+        </p>
+      </div>
+      <div className={styles.addPlayer}>
+        <input className={styles.addPlayerInput}
+          type="text" 
+          placeholder="Wpisz imię" 
+          value={playerName}
+          onChange={onPlayerNameChange}
+        />
+        <button 
+          className={styles.addPlayerButton} 
+          onClick={onAddPlayer}
+        >
+          Dodaj
+        </button>
+        <ul>
+          <h3>Lista aktualnych graczy:</h3>
+          {playersArray && playersArray.map((player, index) => (
+            <li key={index}>{player}</li>
+          ))}
+        </ul>
+      </div>
+      
+      <div className={styles.map__button}>
+      <Link to="/TI-app/map" className={styles.map__link}>
+        Aktualna mapa
+      </Link>
+      </div>
     </div>
   );
 }

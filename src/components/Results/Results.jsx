@@ -1,55 +1,40 @@
-import { useContext, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { PlayersContext } from "../../Context/PlayersContext.jsx";
+import { playersCount, result } from "../../redux/game/gameSelectors";
 import styles from "./Results.module.css";
+import { Hexgrid } from "./Map/Hexgrid";
 
 export function Results() {
-  const { result, playersCount, runCount, isGameTrue, speaker, setSpeaker } =
-    useContext(PlayersContext);
 
-  const randomIndex = Math.floor(Math.random() * playersCount);
+  const results = useSelector(result);
+  const players = useSelector(playersCount)
+  const randomIndex = Math.floor(Math.random() * players);
+
   const selectedSpeaker =
-    result[randomIndex] && result[randomIndex].split(":")[0];
+    results[randomIndex] && results[randomIndex].split(":")[0];
 
-  useEffect(() => {
-    setSpeaker(selectedSpeaker);
-  }, [speaker]);
 
   return (
     <div className={styles.results}>
       <div className={styles.buttonContainer}>
-        <Link to="/TI-app">
+        <Link to="/TI-app/">
           <button className={styles.backBtn}>Powrót</button>
         </Link>
       </div>
-      {isGameTrue && (
-        <div className={styles.results__title}>
-          {runCount === 1 && <h3>Wyniki Oficjalne</h3>}
-          {runCount > 1 && <h3>Wyniki mniej Oficjalne</h3>}
+        <div >
+          <h3 className={styles.results__title}>Wyniki </h3>
         </div>
-      )}
-
       <ul className={styles.results_list}>
-        {result.map((player, index) => (
-          <li className={styles.results_list__item} key={index}>
+        {results.map((player, index) => (
+          <li className={styles.results_list__item}
+           key={index}>
             {player}
           </li>
         ))}
       </ul>
-
       <p className={styles.speaker}>
         {selectedSpeaker && `Mówcą zostaje ${selectedSpeaker}`}
       </p>
-      {/* <div>
-        {runCount === 1 && (
-          <h4>Skrypt został uruchomiony raz w ciągu ostatnich 5 minut.</h4>
-        )}
-        {runCount > 1 && (
-          <h4>
-            Skrypt został uruchomiony {runCount} razy w ciągu ostatnich 5 minut.
-          </h4>
-        )}
-      </div> */}
     </div>
   );
 }
