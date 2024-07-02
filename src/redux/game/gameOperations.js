@@ -1,9 +1,9 @@
-import { initialRaces, modifiedRaces } from "./initialRaces";
-
+import { initialRaces } from "./initialRaces";
 
 export function playerDraw(playersCount, playerNames) {
-  
-  let currentIndex = playerNames.length, temporaryValue, randomIndex;
+  let currentIndex = playerNames.length,
+    temporaryValue,
+    randomIndex;
 
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -14,16 +14,15 @@ export function playerDraw(playersCount, playerNames) {
     playerNames[randomIndex] = temporaryValue;
   }
 
-  const availableRaces = [...(Number(playersCount) === 6 ? modifiedRaces : initialRaces)];
+  const availableRaces = [...initialRaces];
 
-  return Array.from({length: playersCount}, (_, i) => {
-
-    const playerRaces = Array.from({length: 3}, () => {
+  return Array.from({ length: playersCount }, (_, i) => {
+    const playerRaces = Array.from({ length: 3 }, () => {
       const randomRaceIndex = Math.floor(Math.random() * availableRaces.length);
       const selectedRace = availableRaces.splice(randomRaceIndex, 1)[0];
       return selectedRace.name;
     });
-    
+
     return `Gracz ${i + 1}: ${playerNames[i]}, rasy: ${playerRaces.join(", ")}`;
   });
 }

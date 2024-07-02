@@ -36,4 +36,11 @@ export const initialRaces = [
   { id: 15, name: "Xxcha" },
   { id: 16, name: "Yin" },
   { id: 17, name: "Yssaril" },
+  { id: 18, name: "Argent" },
+  { id: 19, name: "Empyran" },
+  { id: 20, name: "Mahact" },
+  { id: 21, name: "Naaz-Rokha" },
+  { id: 22, name: "Nomad" },
+  { id: 23, name: "Titans" },
+  { id: 24, name: "Cabal" },
 ];
